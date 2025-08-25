@@ -7,14 +7,14 @@
   <title>My GitHub Pages Arcade</title>
   <style>
     :root{
-      --bg:#0f1220; --panel:#171a2b; --text:#e9ecff; --muted:#9aa3c7; --accent:#6ea8ff;
-      --card:#1b2036; --card2:#212744; --ring:#2f3a70; --ok:#3bd671; --warn:#ffcc66;
+      --bg:#2b0f0f; --panel:#3a1717; --text:#e9ecff; --muted:#d3a9a9; --accent:#ff6e6e;
+      --card:#3c1b1b; --card2:#442121; --ring:#702f2f; --ok:#3bd671; --warn:#ffcc66;
     }
     *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg,#0c1020,#131735);color:var(--text);
+    body{margin:0;background:linear-gradient(180deg,#2b0f0f,#441212);color:var(--text);
          font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
          min-height:100vh;}
-    header{position:sticky;top:0;background:rgba(15,18,32,.8);backdrop-filter:blur(8px);z-index:10;border-bottom:1px solid #1f2544}
+    header{position:sticky;top:0;background:rgba(43,15,15,.8);backdrop-filter:blur(8px);z-index:10;border-bottom:1px solid #442121}
     .wrap{max-width:1100px;margin:0 auto;padding:18px}
     h1{margin:0;font-weight:800;letter-spacing:.2px;font-size:clamp(20px,5vw,28px)}
     .sub{color:var(--muted);font-size:14px;margin-top:4px}
@@ -23,64 +23,34 @@
     .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;border:1px solid var(--ring);background:var(--panel);font-size:13px;color:var(--muted)}
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;padding:20px 18px 90px}
     .card{background:linear-gradient(180deg,var(--card),var(--card2));border:1px solid #2a315a;border-radius:18px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.25)}
-    .card .thumb{aspect-ratio:16/9;background:#0a0e22 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="%23121b3d"/><stop offset="100%" stop-color="%230b1126"/></linearGradient></defs><rect width="100%" height="100%" fill="url(%23g)"/><g fill="%232d3b7a" font-family="monospace" font-size="36"><text x="50%" y="52%" text-anchor="middle">No preview</text></g></svg>') center/cover no-repeat;border-bottom:1px solid #2a315a}
+    .card .thumb{aspect-ratio:16/9;background:#3a1010 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="%23421c1c"/><stop offset="100%" stop-color="%23310f0f"/></linearGradient></defs><rect width="100%" height="100%" fill="url(%23g)"/><g fill="%23623a3a" font-family="monospace" font-size="36"><text x="50%" y="52%" text-anchor="middle">No preview</text></g></svg>') center/cover no-repeat;border-bottom:1px solid #442121}
     .card .body{padding:14px}
     .title{font-weight:700}
     .meta{margin-top:6px;color:var(--muted);font-size:12px}
     .btnrow{display:flex;gap:8px;margin-top:12px}
     button, .btn{appearance:none;border:1px solid var(--ring);background:var(--panel);color:var(--text);padding:9px 11px;border-radius:12px;font-weight:600;cursor:pointer}
-    .btn.primary{background:var(--accent);border-color:#5a90e6;color:#08112a}
-    .tag{display:inline-block;margin-top:8px;font-size:11px;color:#a9b7ff;background:#1a2250;border:1px solid #2c3882;padding:4px 8px;border-radius:999px}
-    footer{position:fixed;inset:auto 0 0 0;background:rgba(12,15,30,.9);backdrop-filter:blur(10px);border-top:1px solid #1f2544}
+    .btn.primary{background:var(--accent);border-color:#e65a5a;color:#08112a}
+    .tag{display:inline-block;margin-top:8px;font-size:11px;color:#ffa9a9;background:#3a1a1a;border:1px solid #552121;padding:4px 8px;border-radius:999px}
+    footer{position:fixed;inset:auto 0 0 0;background:rgba(43,15,15,.9);backdrop-filter:blur(10px);border-top:1px solid #442121}
     .footwrap{max-width:1100px;margin:0 auto;padding:10px 18px;display:flex;gap:10px;align-items:center;justify-content:space-between;color:var(--muted);font-size:12px}
-    .footwrap a{color:#b6c7ff}/* Modal */
-dialog{border:none;border-radius:16px;width:min(980px,92vw);padding:0;overflow:hidden;background:#0d1128;color:var(--text)}
+    .footwrap a{color:#ffb6b6}dialog{border:none;border-radius:16px;width:min(980px,92vw);padding:0;overflow:hidden;background:#330d0d;color:var(--text)}
 dialog::backdrop{background:rgba(0,0,0,.6)}
-.framebar{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-bottom:1px solid #1f2544;background:#0f1533}
+.framebar{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-bottom:1px solid #442121;background:#3a1010}
 .framebar .title{font-size:14px}
 iframe{display:block;width:100%;height:min(70vh,76vh);border:0;background:#000}
-.notice{font-size:12px;color:var(--muted);padding:8px 12px;border-top:1px solid #1f2544;background:#0e142f}
+.notice{font-size:12px;color:var(--muted);padding:8px 12px;border-top:1px solid #442121;background:#330d0d}
 .ok{color:var(--ok)} .warn{color:var(--warn)}
-
-/* Small help pill */
-.help{position:fixed;right:14px;bottom:70px;font-size:12px;color:#c9d3ff;background:#151b35;border:1px dashed #2a356a;border-radius:12px;padding:10px 12px;max-width:280px}
-.help b{color:#dfe6ff}
+.help{position:fixed;right:14px;bottom:70px;font-size:12px;color:#ffc9c9;background:#3b1515;border:1px dashed #552121;border-radius:12px;padding:10px 12px;max-width:280px}
+.help b{color:#ffdfe6}
 code{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
 
   </style>
 </head>
 <body>
-  <!--
-    GitHub Pages Arcade (single file)
-    ===================================================
-    HOW TO DEPLOY
-    1) Create a new repo on GitHub (e.g., my-arcade)
-    2) Add this file as index.html at the root and commit.
-    3) Settings → Pages → Source: “Deploy from a branch”, Branch: main /(root).
-    4) Wait for the green check, then open your Pages URL.ADDING GAMES
-- Edit the GAMES array below. For each game you can use:
-  {
-    id: 'unique-id',
-    title: 'Game Name',
-    type: 'embed' | 'link',
-    url: 'https://…',          // For embed: direct playable page that allows iframes; otherwise use type: 'link'
-    creditName: 'Creator / Studio',
-    creditUrl: 'https://…',
-    tags: ['action','racing'],  // optional
-    note: 'License, caveats, etc.'
-  }
-- Only embed if the owner permits embedding (open‑source, permissive license, or explicitly allows). When in doubt, set type:'link'.
-
-LEGAL NOTE
-- Don’t host paid/closed‑source games yourself. Prefer: links, official embeds, or open‑source projects.
-- Always include attribution (creditName + creditUrl). If a license requires a notice, include it in note.
-
--->
-
   <header>
     <div class="wrap">
-      <h1>My Unblocked‑ish Arcade</h1>
-      <div class="sub">A personal collection of browser games. Search, click, play. If a game can’t be embedded here, it opens in a new tab.</div>
+      <h1>My Red-Themed Arcade</h1>
+      <div class="sub">A personal collection of browser games. Search, click, play.</div>
       <div class="toolbar">
         <input id="q" type="search" placeholder="Search games… (e.g., racing, shooter, cookie)" />
         <label class="chip"><input id="embedOnly" type="checkbox" /> &nbsp;Embed‑only</label>
@@ -107,120 +77,9 @@ LEGAL NOTE
   </div>  <script>
     // ====== Your library of games (edit me) ======
     const GAMES = [
-      // ✅ Open‑source, embeddable example
-      {
-        id:'space-huggers',
-        title:'Space Huggers',
-        type:'embed',
-        url:'https://killedbyapixel.github.io/SpaceHuggers/',
-        creditName:'Frank Force (KilledByAPixel)',
-        creditUrl:'https://github.com/KilledByAPixel/SpaceHuggers',
-        tags:['action','roguelike','platformer'],
-        note:'GPL‑3.0 — attribution required.'
-      },
-
-      // ✅ Often embeddable via CodePen (falls back to link if frame blocked)
-      {
-        id:'drive-mad',
-        title:'Drive Mad',
-        type:'embed',
-        url:'https://codepen.io/drivemadorg/full/qBLYByV',
-        creditName:'Drive Mad (web port authors)',
-        creditUrl:'https://codepen.io/drivemadorg/pen/qBLYByV',
-        tags:['driving','physics'],
-        note:'If this frame is blocked, switch to type:"link".'
-      },
-
-      // 🔗 Safer to link (popular portal; embeds often disallowed)
-      {
-        id:'drift-hunters',
-        title:'Drift Hunters',
-        type:'link',
-        url:'https://itch.io/games/browser/tag-drifting',
-        creditName:'Original by Ilya Kaminetsky (Studio), various hosts',
-        creditUrl:'https://www.crazygames.com/game/drift-hunters',
-        tags:['racing','drifting'],
-        note:'Use official hosts; many mirrors exist. Prefer links over embeds.'
-      },
-
+      { id:'space-huggers', title:'Space Huggers', type:'embed', url:'https://killedbyapixel.github.io/SpaceHuggers/', creditName:'Frank Force (KilledByAPixel)', creditUrl:'https://github.com/KilledByAPixel/SpaceHuggers', tags:['action','roguelike','platformer'], note:'GPL‑3.0 — attribution required.' },
+      { id:'drive-mad', title:'Drive Mad', type:'embed', url:'https://codepen.io/drivemadorg/full/qBLYByV', creditName:'Drive Mad (web port authors)', creditUrl:'https://codepen.io/drivemadorg/pen/qBLYByV', tags:['driving','physics'], note:'If this frame is blocked, switch to type:"link".' },
+      { id:'drift-hunters', title:'Drift Hunters', type:'link', url:'https://itch.io/games/browser/tag-drifting', creditName:'Original by Ilya Kaminetsky', creditUrl:'https://www.crazygames.com/game/drift-hunters', tags:['racing','drifting'], note:'Use official hosts; prefer links.' },
       { id:'race-survival-arena-king', title:'Race Survival: Arena King', type:'link', url:'https://yandex.com/games/', creditName:'Publisher varies', creditUrl:'https://yandex.com/games/', tags:['arena','survival'] },
       { id:'curve-rush', title:'Curve Rush', type:'link', url:'https://twoplayergames.org/', creditName:'Publisher varies', creditUrl:'https://twoplayergames.org/', tags:['arcade','reaction'] },
-      { id:'block-blast', title:'Block Blast', type:'link', url:'https://itch.io/search?q=Block+Blast', creditName:'Indie creators on itch.io', creditUrl:'https://itch.io', tags:['puzzle'] },
-      { id:'flip-bottle', title:'Bottle Flip 3D / Flip Bottle', type:'link', url:'https://www.crazygames.com/game/flip-bottle', creditName:'Assorted hosts', creditUrl:'https://www.crazygames.com/game/flip-bottle', tags:['arcade','physics'] },
-      { id:'shell-shockers', title:'Shell Shockers', type:'link', url:'https://shellshock.io/', creditName:'Blue Wizard Digital', creditUrl:'https://shellshock.io/', tags:['fps','multiplayer'] },
-      { id:'cookie-clicker', title:'Cookie Clicker (official)', type:'link', url:'https://orteil.dashnet.org/cookieclicker/', creditName:'Orteil & DashNet', creditUrl:'https://dashnet.org/', tags:['idle','clicker'] },
-      { id:'gunspin', title:'GunSpin', type:'link', url:'https://www.crazygames.com/game/gunspin', creditName:'Maxim Karpenko / Nevar Games', creditUrl:'https://www.crazygames.com/game/gunspin', tags:['physics','arcade'] },
-
-      // Unknown availability — start as links; update if you find permissive sources
-      { id:'stick-fighter', title:'Stick Fighter', type:'link', url:'https://www.newgrounds.com/search/conduct?match=1&tags=stick+fight', creditName:'Various creators', creditUrl:'https://www.newgrounds.com/', tags:['action'] },
-      { id:'bloodmoney', title:'Bloodmoney', type:'link', url:'https://www.newgrounds.com/', creditName:'(verify source)', creditUrl:'https://www.newgrounds.com/', tags:['action'] },
-    ];
-
-    // ====== UI logic ======
-    const grid = document.getElementById('grid');
-    const q = document.getElementById('q');
-    const embedOnly = document.getElementById('embedOnly');
-    const linkOnly = document.getElementById('linkOnly');
-
-    function makeCard(g){
-      const el = document.createElement('article');
-      el.className = 'card';
-      el.innerHTML = `
-        <div class="thumb"></div>
-        <div class="body">
-          <div class="title">${g.title}</div>
-          <div class="meta">${g.creditName ? `by <a href="${g.creditUrl}" target="_blank" rel="noopener">${g.creditName}</a>` : ''}</div>
-          ${g.tags?.length? `<div class="tag">${g.tags.join(' · ')}</div>`: ''}
-          ${g.note? `<div class="meta" style="margin-top:8px">${g.note}</div>`:''}
-          <div class="btnrow">
-            ${g.type==='embed' ? `<button class="btn primary" data-act="play" data-id="${g.id}">Play</button>`:''}
-            <a class="btn" href="${g.url}" target="_blank" rel="noopener">Open</a>
-          </div>
-        </div>`;
-      return el;
-    }
-
-    function render(){
-      const term = q.value.trim().toLowerCase();
-      grid.innerHTML = '';
-      GAMES.filter(g=>{
-        if (embedOnly.checked && g.type!=='embed') return false;
-        if (linkOnly.checked && g.type!=='link') return false;
-        if (!term) return true;
-        const hay = `${g.title} ${g.tags?.join(' ')||''} ${g.creditName||''}`.toLowerCase();
-        return hay.includes(term);
-      }).forEach(g=> grid.appendChild(makeCard(g)));
-    }
-
-    q.addEventListener('input', render);
-    embedOnly.addEventListener('change', ()=>{ if(embedOnly.checked) linkOnly.checked=false; render(); });
-    linkOnly.addEventListener('change', ()=>{ if(linkOnly.checked) embedOnly.checked=false; render(); });
-
-    // Simple event delegation for Play buttons
-    grid.addEventListener('click', (e)=>{
-      const btn = e.target.closest('button[data-act="play"]');
-      if(!btn) return;
-      const g = GAMES.find(x=>x.id===btn.dataset.id);
-      if(!g) return;
-      openPlayer(g);
-    });
-
-    // Modal player
-    const dlg = document.getElementById('player');
-    const frame = document.getElementById('frame');
-    const frameTitle = document.getElementById('frameTitle');
-    const frameVisit = document.getElementById('frameVisit');
-    const frameClose = document.getElementById('frameClose');
-
-    function openPlayer(g){
-      frameTitle.textContent = g.title;
-      frameVisit.href = g.url;
-      try{ frame.src = g.url; }catch(err){ frame.removeAttribute('src'); }
-      if(typeof dlg.showModal === 'function') dlg.showModal(); else alert('Your browser blocked the modal. Use Open in New Tab.');
-    }
-    frameClose.addEventListener('click', ()=>{ frame.src='about:blank'; dlg.close(); });
-
-    // initial render
-    render();
-  </script></body>
-</html>
+      { id:'block-blast', title:'Block Blast', type:'link', url:'https://itch.io/search?q=Block+
