@@ -98,7 +98,8 @@
     function render(){
       const term = q.value.trim().toLowerCase();
       grid.innerHTML='';
-      GAMES.filter(g=>g.title.toLowerCase().includes(term)).forEach(g=>grid.appendChild(makeCard(g));
+      GAMES.filter(g => g.title.toLowerCase().includes(term))
+           .forEach(g => grid.appendChild(makeCard(g)));
     }
 
     q.addEventListener('input', render);
