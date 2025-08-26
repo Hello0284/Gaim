@@ -117,11 +117,11 @@
     <div class="game-card">
       <h2>Space Huggers</h2>
       <div class="responsive-iframe-container">
-        <iframe src="https://openprocessing.org/sketch/2392679/embed/"></iframe>
+        <iframe src="https://openprocessing.org/sketch/2093028/embed/"></iframe>
       </div>
       <div class="btn-container">
         <button class="btn" onclick="openFullscreen(this)">Play in Browser</button>
-        <a href="https://openprocessing.org/sketch/2392679/" target="_blank">
+        <a href="https://openprocessing.org/sketch/2093028/" target="_blank">
           <button class="btn">Go to Site</button>
         </a>
       </div>
@@ -145,6 +145,8 @@
   <script>
     function openFullscreen(button) {
       let iframe = button.parentElement.previousElementSibling.querySelector('iframe');
+      if (!iframe) return;
+
       if (iframe.requestFullscreen) {
         iframe.requestFullscreen();
       } else if (iframe.mozRequestFullScreen) {
@@ -154,6 +156,9 @@
       } else if (iframe.msRequestFullscreen) {
         iframe.msRequestFullscreen();
       }
+
+      // Optional: Scroll to top for mobile fullscreen
+      window.scrollTo(0,0);
     }
   </script>
 </body>
