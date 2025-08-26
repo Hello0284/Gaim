@@ -53,8 +53,14 @@
       border-radius: 8px;
     }
 
-    .fullscreen-btn {
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
       margin-top: 8px;
+    }
+
+    .btn {
       padding: 6px 10px;
       background: #ff4444;
       color: white;
@@ -63,7 +69,7 @@
       cursor: pointer;
     }
 
-    .fullscreen-btn:hover {
+    .btn:hover {
       background: #ff6666;
     }
 
@@ -86,22 +92,34 @@
     <div class="game-card">
       <h2>Drive Mad</h2>
       <iframe src="https://openprocessing.org/sketch/2532343/embed/"></iframe>
-      <button class="fullscreen-btn" onclick="openFullscreen(this)">Fullscreen</button>
+      <div class="btn-container">
+        <button class="btn" onclick="openFullscreen(this)">Play in Browser</button>
+        <a href="https://openprocessing.org/sketch/2532343/" target="_blank">
+          <button class="btn">Go to Site</button>
+        </a>
+      </div>
     </div>
 
     <!-- Space Huggers -->
     <div class="game-card">
       <h2>Space Huggers</h2>
       <iframe src="https://openprocessing.org/sketch/2392679/embed/"></iframe>
-      <button class="fullscreen-btn" onclick="openFullscreen(this)">Fullscreen</button>
+      <div class="btn-container">
+        <button class="btn" onclick="openFullscreen(this)">Play in Browser</button>
+        <a href="https://openprocessing.org/sketch/2392679/" target="_blank">
+          <button class="btn">Go to Site</button>
+        </a>
+      </div>
     </div>
 
     <!-- Infinite Craft -->
     <div class="game-card">
       <h2>Infinite Craft</h2>
-      <a href="https://neal.fun/infinite-craft/" target="_blank">
-        <button class="fullscreen-btn">Open Game</button>
-      </a>
+      <div class="btn-container">
+        <a href="https://neal.fun/infinite-craft/" target="_blank">
+          <button class="btn">Go to Site</button>
+        </a>
+      </div>
     </div>
   </div>
 
@@ -111,7 +129,7 @@
 
   <script>
     function openFullscreen(button) {
-      let iframe = button.previousElementSibling;
+      let iframe = button.parentElement.previousElementSibling;
       if (iframe.requestFullscreen) {
         iframe.requestFullscreen();
       } else if (iframe.mozRequestFullScreen) {
