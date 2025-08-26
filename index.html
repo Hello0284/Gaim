@@ -1,142 +1,127 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Math Academy</title>
-<style>
-:root{
-  --bg:#2b0f0f; --panel:#3a1717; --text:#e9ecff; --muted:#d3a9a9; --accent:#ff6e6e;
-  --card:#3c1b1b; --card2:#442121; --ring:#702f2f; --ok:#3bd671; --warn:#ffcc66;
-}
-*{box-sizing:border-box}
-body{margin:0;background:linear-gradient(180deg,#2b0f0f,#441212);color:var(--text);
-     font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
-     min-height:100vh;overflow-x:hidden;}
-header{position:sticky;top:0;background:rgba(43,15,15,.8);backdrop-filter:blur(8px);z-index:10;border-bottom:1px solid #442121}
-.wrap{max-width:1100px;margin:0 auto;padding:18px}
-h1{margin:0;font-weight:800;letter-spacing:.2px;font-size:clamp(20px,5vw,28px)}
-.sub{color:var(--muted);font-size:14px;margin-top:4px}
-.toolbar{display:flex;gap:12px;align-items:center;margin-top:14px;flex-wrap:wrap}
-input[type="search"]{flex:1;min-width:220px;padding:12px 14px;border-radius:12px;border:1px solid var(--ring);background:var(--panel);color:var(--text)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;padding:20px 18px 90px}
-.card{background:linear-gradient(180deg,var(--card),var(--card2));border:1px solid #2a315a;border-radius:18px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.25)}
-.card .thumb{aspect-ratio:16/9;background:#3a1010 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="%23421c1c"/><stop offset="100%" stop-color="%23310f0f"/></linearGradient></defs><rect width="100%" height="100%" fill="url(%23g)"/><g fill="%23623a3a" font-family="monospace" font-size="36"><text x="50%" y="52%" text-anchor="middle">No preview</text></g></svg>') center/cover no-repeat;border-bottom:1px solid #442121}
-.card .body{padding:14px}
-.title{font-weight:700}
-.btnrow{display:flex;gap:8px;margin-top:12px}
-button, .btn{appearance:none;border:1px solid var(--ring);background:var(--panel);color:var(--text);padding:9px 11px;border-radius:12px;font-weight:600;cursor:pointer}
-.btn.primary{background:var(--accent);border-color:#e65a5a;color:#08112a}
-footer{position:fixed;inset:auto 0 0 0;background:rgba(43,15,15,.9);backdrop-filter:blur(10px);border-top:1px solid #442121}
-.footwrap{max-width:1100px;margin:0 auto;padding:10px 18px;display:flex;gap:10px;align-items:center;justify-content:space-between;color:var(--muted);font-size:12px}
-#overlay{position:fixed;inset:0;background:#000;display:none;flex-direction:column;z-index:9999;}
-#overlay iframe{flex:1;width:100%;border:0;}
-#overlay .bar{background:rgba(43,15,15,.9);padding:10px 12px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #442121}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Education Resources</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #ddd;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #222;
+      padding: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    }
+
+    header h1 {
+      margin: 0;
+      color: #f55;
+      font-size: 24px;
+    }
+
+    .game-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .game-card {
+      background: #1c1c1c;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+
+    .game-card h2 {
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: #ff6666;
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .fullscreen-btn {
+      margin-top: 8px;
+      padding: 6px 10px;
+      background: #ff4444;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .fullscreen-btn:hover {
+      background: #ff6666;
+    }
+
+    footer {
+      padding: 10px;
+      background: #111;
+      color: #666;
+      font-size: 12px;
+    }
+  </style>
 </head>
 <body>
-<header>
-  <div class="wrap">
-    <h1>Playable Red Arcade V5</h1>
-    <div class="sub">All games are playable directly in this site. Links open in new tab.</div>
-    <div class="toolbar">
-      <input id="q" type="search" placeholder="Search games…"/>
+  <header>
+    <h1>Math Education Resources</h1>
+    <p>Interactive Tools &amp; Activities</p>
+  </header>
+
+  <div class="game-container">
+    <!-- Cookie Clicker -->
+    <div class="game-card">
+      <h2>Cookie Clicker</h2>
+      <iframe src="https://orteil.dashnet.org/cookieclicker/"></iframe>
+      <button class="fullscreen-btn" onclick="openFullscreen(this)">Fullscreen</button>
+    </div>
+
+    <!-- Shell Shockers -->
+    <div class="game-card">
+      <h2>Shell Shockers</h2>
+      <iframe src="https://shellshock.io"></iframe>
+      <button class="fullscreen-btn" onclick="openFullscreen(this)">Fullscreen</button>
+    </div>
+
+    <!-- Infinite Craft -->
+    <div class="game-card">
+      <h2>Infinite Craft</h2>
+      <a href="https://neal.fun/infinite-craft/" target="_blank">
+        <button class="fullscreen-btn">Open Game</button>
+      </a>
     </div>
   </div>
-</header>
 
-<main class="grid" id="grid"></main>
+  <footer>
+    <p>© 2025 Math Education Resources</p>
+  </footer>
 
-<footer>
-  <div class="footwrap">
-    <div>Playable only games. Support original creators.</div>
-    <div>Built with ❤️ in vanilla JS.</div>
-  </div>
-</footer>
-
-<div id="overlay">
-  <div class="bar">
-    <div id="overlayTitle">Loading…</div>
-    <button id="overlayClose" class="btn">Close</button>
-  </div>
-  <iframe id="overlayFrame" allow="autoplay; fullscreen; gamepad; xr-spatial-tracking"></iframe>
-</div>
-
-<script>
-const GAMES = [
-  {id:'space-huggers', title:'Space Huggers', type:'embed', url:'https://killedbyapixel.github.io/SpaceHuggers/'},
-  {id:'drive-mad', title:'Drive Mad', type:'embed', url:'https://codepen.io/drivemadorg/full/qBLYByV'},
-  {id:'infinite-craft', title:'Infinite Craft', type:'link', url:'https://neal.fun/infinite-craft/'}
-];
-
-const grid = document.getElementById('grid');
-const q = document.getElementById('q');
-const overlay = document.getElementById('overlay');
-const overlayFrame = document.getElementById('overlayFrame');
-const overlayTitle = document.getElementById('overlayTitle');
-const overlayClose = document.getElementById('overlayClose');
-
-function makeCard(g){
-  const el = document.createElement('article');
-  el.className='card';
-  let btnHTML='';
-  if(g.type==='embed'){
-    btnHTML = `<button class="btn primary" data-id="${g.id}">Play</button>`;
-  } else if(g.type==='link'){
-    btnHTML = `<a class="btn primary" href="${g.url}" target="_blank">Open</a>`;
-  }
-  el.innerHTML=`
-    <div class="thumb"></div>
-    <div class="body">
-      <div class="title">${g.title}</div>
-      <div class="btnrow">${btnHTML}</div>
-    </div>`;
-  return el;
-}
-
-function render(){
-  const term = q.value.trim().toLowerCase();
-  grid.innerHTML='';
-  GAMES.filter(g=>g.title.toLowerCase().includes(term))
-       .forEach(g=>grid.appendChild(makeCard(g)));
-}
-
-q.addEventListener('input', render);
-
-grid.addEventListener('click', e=>{
-  const btn = e.target.closest('button[data-id]');
-  if(!btn) return;
-  const g = GAMES.find(x=>x.id===btn.dataset.id);
-  if(!g) return;
-  overlayTitle.textContent = g.title;
-  overlayFrame.src = g.url;
-  overlay.style.display='flex';
-});
-
-function closeOverlay(){
-  overlayFrame.src='about:blank';
-  overlay.style.display='none';
-}
-
-overlayClose.addEventListener('click', closeOverlay);
-
-// Close overlay on ESC key
-document.addEventListener('keydown', e=>{
-  if(e.key==='Escape' && overlay.style.display==='flex'){
-    closeOverlay();
-  }
-});
-
-// Double-click to toggle fullscreen
-overlayFrame.addEventListener('dblclick', ()=>{
-  if(document.fullscreenElement){
-    document.exitFullscreen();
-  } else {
-    overlayFrame.requestFullscreen?.();
-  }
-});
-
-render();
-</script>
+  <script>
+    function openFullscreen(button) {
+      let iframe = button.previousElementSibling;
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.mozRequestFullScreen) {
+        iframe.mozRequestFullScreen();
+      } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) {
+        iframe.msRequestFullscreen();
+      }
+    }
+  </script>
 </body>
 </html>
