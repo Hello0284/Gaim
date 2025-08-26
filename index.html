@@ -46,9 +46,19 @@
       color: #ff6666;
     }
 
-    iframe {
+    .responsive-iframe-container {
+      position: relative;
       width: 100%;
-      height: 400px;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+    }
+
+    .responsive-iframe-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       border: none;
       border-radius: 8px;
     }
@@ -58,6 +68,7 @@
       justify-content: center;
       gap: 10px;
       margin-top: 8px;
+      flex-wrap: wrap;
     }
 
     .btn {
@@ -91,7 +102,9 @@
     <!-- Drive Mad Clone -->
     <div class="game-card">
       <h2>Drive Mad</h2>
-      <iframe src="https://openprocessing.org/sketch/2532343/embed/"></iframe>
+      <div class="responsive-iframe-container">
+        <iframe src="https://openprocessing.org/sketch/2532343/embed/"></iframe>
+      </div>
       <div class="btn-container">
         <button class="btn" onclick="openFullscreen(this)">Play in Browser</button>
         <a href="https://openprocessing.org/sketch/2532343/" target="_blank">
@@ -103,7 +116,9 @@
     <!-- Space Huggers -->
     <div class="game-card">
       <h2>Space Huggers</h2>
-      <iframe src="https://openprocessing.org/sketch/2392679/embed/"></iframe>
+      <div class="responsive-iframe-container">
+        <iframe src="https://openprocessing.org/sketch/2392679/embed/"></iframe>
+      </div>
       <div class="btn-container">
         <button class="btn" onclick="openFullscreen(this)">Play in Browser</button>
         <a href="https://openprocessing.org/sketch/2392679/" target="_blank">
@@ -129,7 +144,7 @@
 
   <script>
     function openFullscreen(button) {
-      let iframe = button.parentElement.previousElementSibling;
+      let iframe = button.parentElement.previousElementSibling.querySelector('iframe');
       if (iframe.requestFullscreen) {
         iframe.requestFullscreen();
       } else if (iframe.mozRequestFullScreen) {
