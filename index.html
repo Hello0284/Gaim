@@ -1,113 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Game Hub</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Math Education Hub</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: #fff;
-      text-align: center;
-      margin: 0;
-      padding: 0;
+    :root{
+      --maroon:#800000;
+      --maroon-2:#a00000;
+      --maroon-3:#c0392b;
+      --bg:#111;
+      --card:#1e1e1e;
+      --text:#eee;
     }
-    h1 {
-      margin: 20px 0;
-      font-size: 2.5em;
-      color: #c0392b;
-      text-shadow: 0 0 10px rgba(192,57,43,0.8);
+    *{box-sizing:border-box}
+    body{
+      margin:0; background:var(--bg); color:var(--text);
+      font-family: Arial, Helvetica, sans-serif; text-align:center;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      padding: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
+    header{
+      background:var(--maroon);
+      padding:16px 20px; font-size:28px; font-weight:700;
+      box-shadow:0 2px 10px rgba(0,0,0,.4);
     }
-    .btn {
-      display: block;
-      padding: 40px 20px;
-      background: #800000;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 14px;
-      cursor: pointer;
-      font-size: 1.3em;
-      font-weight: bold;
-      transition: transform 0.15s, background 0.2s, box-shadow 0.2s;
+    h1{ margin: 18px 0 6px; font-size:2.2rem; color:var(--maroon-3); }
+    .grid{
+      display:grid; gap:18px; padding:20px; max-width:1100px; margin:0 auto;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     }
-    .btn:hover {
-      background: #a00000;
-      transform: scale(1.08);
-      box-shadow: 0 0 12px rgba(192,57,43,0.7);
+    .card{
+      background:var(--card); border-radius:14px; padding:18px;
+      box-shadow:0 6px 20px rgba(0,0,0,.35);
+      display:flex; flex-direction:column; align-items:center; gap:10px;
     }
-    #gameFrame {
-      margin: 20px auto 40px;
-      max-width: 95%;
+    .title{
+      margin:0; color:#ff7676; font-size:1.15rem; letter-spacing:.3px;
     }
-    iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    .bigbtn{
+      width:100%; padding:16px 14px; border:none; border-radius:12px;
+      background:var(--maroon); color:#fff; font-size:1.05rem; font-weight:700;
+      cursor:pointer; transition:transform .12s, box-shadow .15s, background .2s;
     }
-    #fullscreenBtn {
-      display: none;
-      margin-top: 10px;
-      padding: 12px 20px;
-      background: #c0392b;
-      color: #fff;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 1.1em;
-      font-weight: bold;
-      transition: background 0.2s, transform 0.15s;
+    .bigbtn:hover{ background:var(--maroon-2); transform:scale(1.04);
+      box-shadow:0 0 14px rgba(192,57,43,.65); }
+    .subbtn{
+      width:100%; padding:12px; border:none; border-radius:10px;
+      background:#333; color:#fff; font-weight:600; cursor:pointer;
+      transition:background .2s, transform .12s;
     }
-    #fullscreenBtn:hover {
-      background: #e74c3c;
-      transform: scale(1.05);
+    .subbtn:hover{ background:#444; transform:scale(1.03); }
+    #stage{ max-width:95%; margin: 18px auto 40px; }
+    iframe{
+      width:100%; height:620px; border:none; border-radius:14px;
+      box-shadow:0 0 18px rgba(0,0,0,.55); background:#000;
+    }
+    .controls{
+      display:none; gap:10px; justify-content:center; margin-top:10px;
+    }
+    .ctl{
+      padding:12px 18px; border:none; border-radius:10px; font-weight:800;
+      cursor:pointer; color:#fff; background:var(--maroon);
+      transition:background .2s, transform .12s;
+    }
+    .ctl:hover{ background:var(--maroon-2); transform:scale(1.03); }
+    @media (max-width: 768px){
+      iframe{ height:65vh; }
     }
   </style>
 </head>
 <body>
-  <h1>🎮 My Arcade Hub</h1>
+  <header>Math Education Hub</header>
+  <h1>🎮 Game Library</h1>
 
   <div class="grid">
-    <a class="btn" onclick="loadGame('https://gun-spin-online.github.io/')">Gun Spinner</a>
-    <a class="btn" onclick="loadGame('https://gun-spin-online.github.io/go/class-447.html')">Drift Hunters</a>
-    <a class="btn" onclick="loadGame('https://gun-spin-online.github.io/go/class-394.html')">ShootZ</a>
-    <a class="btn" onclick="loadGame('https://gun-spin-online.github.io/go/class-413.html')">Blumgi Rocket</a>
-    <a class="btn" onclick="loadGame('https://gun-spin-online.github.io/go/class-826.html')">Mario</a>
-    <a class="btn" onclick="loadGame('https://gun-spin-online.github.io/go/class-450.html')">Slope</a>
-    <a class="btn" onclick="loadGame('https://gun-spin-online.github.io/projects/spacehuggers/')">Space Huggers</a>
-    <a class="btn" onclick="loadGame('https://gun-spin-online.github.io/projects/drivemad/')">Drive Mad</a>
-    <a class="btn" onclick="loadGame('https://neal.fun/infinite-craft/')">Infinite Craft</a>
+    <!-- Space Huggers -->
+    <div class="card">
+      <h3 class="title">Space Huggers</h3>
+      <button class="bigbtn"
+        onclick="play('https://openprocessing.org/sketch/2093028/embed/')">
+        ▶️ Play in Browser
+      </button>
+      <button class="subbtn"
+        onclick="openSite('https://openprocessing.org/sketch/2093028/')">
+        🌐 Open in New Tab
+      </button>
+    </div>
+
+    <!-- Drive Mad (OpenProcessing sketch you provided) -->
+    <div class="card">
+      <h3 class="title">Drive Mad</h3>
+      <button class="bigbtn"
+        onclick="play('https://openprocessing.org/sketch/2532343/embed/')">
+        ▶️ Play in Browser
+      </button>
+      <button class="subbtn"
+        onclick="openSite('https://openprocessing.org/sketch/2532343/')">
+        🌐 Open in New Tab
+      </button>
+    </div>
+
+    <!-- Infinite Craft (usually blocks iframe; new-tab only) -->
+    <div class="card">
+      <h3 class="title">Infinite Craft</h3>
+      <button class="subbtn"
+        onclick="openSite('https://neal.fun/infinite-craft/')">
+        🌐 Open in New Tab
+      </button>
+    </div>
   </div>
 
-  <div id="gameFrame"></div>
-  <button id="fullscreenBtn" onclick="goFullscreen()">Fullscreen</button>
+  <div id="stage">
+    <iframe id="game" title="Game frame" allowfullscreen></iframe>
+    <div id="ctlRow" class="controls">
+      <button class="ctl" onclick="goFullscreen()">⛶ Fullscreen</button>
+      <button class="ctl" onclick="closeGame()">✖ Close</button>
+    </div>
+  </div>
 
   <script>
-    function loadGame(url) {
-      document.getElementById("gameFrame").innerHTML =
-        `<iframe id="gameIframe" src="${url}" allowfullscreen></iframe>`;
-      document.getElementById("fullscreenBtn").style.display = "inline-block";
+    function play(url){
+      const iframe = document.getElementById('game');
+      const controls = document.getElementById('ctlRow');
+      iframe.src = url;
+      controls.style.display = 'flex';
+      // Scroll to the frame on small screens
+      setTimeout(()=>iframe.scrollIntoView({behavior:'smooth', block:'start'}), 100);
     }
-    function goFullscreen() {
-      let iframe = document.getElementById("gameIframe");
-      if (iframe.requestFullscreen) {
-        iframe.requestFullscreen();
-      } else if (iframe.mozRequestFullScreen) {
-        iframe.mozRequestFullScreen();
-      } else if (iframe.webkitRequestFullscreen) {
-        iframe.webkitRequestFullscreen();
-      } else if (iframe.msRequestFullscreen) {
-        iframe.msRequestFullscreen();
-      }
+    function openSite(url){
+      window.open(url, '_blank', 'noopener');
+    }
+    function goFullscreen(){
+      const iframe = document.getElementById('game');
+      if (iframe.requestFullscreen) iframe.requestFullscreen();
+      else if (iframe.webkitRequestFullscreen) iframe.webkitRequestFullscreen();
+      else if (iframe.mozRequestFullScreen) iframe.mozRequestFullScreen();
+      else if (iframe.msRequestFullscreen) iframe.msRequestFullscreen();
+    }
+    function closeGame(){
+      const iframe = document.getElementById('game');
+      const controls = document.getElementById('ctlRow');
+      iframe.src = '';
+      controls.style.display = 'none';
+      window.scrollTo({top:0, behavior:'smooth'});
     }
   </script>
 </body>
