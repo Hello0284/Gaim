@@ -7,10 +7,10 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #111;
-      color: #eee;
       margin: 0;
       padding: 0;
+      background: #111;
+      color: #eee;
       text-align: center;
     }
     header {
@@ -49,6 +49,33 @@
     .game-card button:hover {
       background: #ff6666;
     }
+    .game-frame {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .game-frame iframe {
+      width: 90%;
+      height: 80%;
+      border: none;
+      border-radius: 12px;
+    }
+    .close-btn {
+      margin-top: 10px;
+      padding: 10px 16px;
+      background: red;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -58,22 +85,41 @@
     <!-- Space Huggers -->
     <div class="game-card">
       <h3>Space Huggers</h3>
-      <button onclick="window.location.href='spacehuggers.html'">Play Space Huggers</button>
+      <button onclick="playGame('https://openprocessing.org/sketch/2093028/embed/')">Play in Browser</button>
+      <button onclick="openSite('https://openprocessing.org/sketch/2093028/')">Go to Site</button>
     </div>
 
     <!-- Drive Mad -->
     <div class="game-card">
       <h3>Drive Mad</h3>
-      <button onclick="window.location.href='drivemad.html'">Play Drive Mad</button>
+      <button onclick="playGame('https://v6p9d9t4.ssl.hwcdn.net/html/6659513/index.html')">Play in Browser</button>
+      <button onclick="openSite('https://v6p9d9t4.ssl.hwcdn.net/html/6659513/index.html')">Go to Site</button>
     </div>
 
-    <!-- Future games can be added below like this -->
-    <!--
+    <!-- Infinite Craft -->
     <div class="game-card">
-      <h3>New Game</h3>
-      <button onclick="window.location.href='newgame.html'">Play New Game</button>
+      <h3>Infinite Craft</h3>
+      <button onclick="openSite('https://neal.fun/infinite-craft/')">Go to Site</button>
     </div>
-    -->
   </div>
+
+  <div class="game-frame" id="gameFrame">
+    <iframe id="iframe" src=""></iframe>
+    <button class="close-btn" onclick="closeGame()">Close Game</button>
+  </div>
+
+  <script>
+    function playGame(url) {
+      document.getElementById("iframe").src = url;
+      document.getElementById("gameFrame").style.display = "flex";
+    }
+    function closeGame() {
+      document.getElementById("iframe").src = "";
+      document.getElementById("gameFrame").style.display = "none";
+    }
+    function openSite(url) {
+      window.open(url, "_blank");
+    }
+  </script>
 </body>
 </html>
