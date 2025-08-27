@@ -18,58 +18,96 @@
       color: #c0392b;
       text-shadow: 0 0 10px rgba(192,57,43,0.8);
     }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
     .btn {
-      display: inline-block;
-      padding: 18px 28px;
-      margin: 12px;
-      background: #800000; /* Dark maroon */
+      display: block;
+      padding: 40px 20px;
+      background: #800000;
       color: #fff;
       text-decoration: none;
-      border-radius: 12px;
+      border-radius: 14px;
       cursor: pointer;
-      font-size: 1.2em;
+      font-size: 1.3em;
       font-weight: bold;
       transition: transform 0.15s, background 0.2s, box-shadow 0.2s;
     }
     .btn:hover {
-      background: #a00000; /* Brighter red on hover */
+      background: #a00000;
       transform: scale(1.08);
       box-shadow: 0 0 12px rgba(192,57,43,0.7);
     }
+    #gameFrame {
+      margin: 20px auto 40px;
+      max-width: 95%;
+    }
     iframe {
-      width: 95%;
+      width: 100%;
       height: 600px;
       border: none;
-      margin-top: 20px;
       border-radius: 12px;
       box-shadow: 0 0 15px rgba(0,0,0,0.5);
     }
-    #gameFrame {
-      margin-bottom: 40px;
+    #fullscreenBtn {
+      display: none;
+      margin-top: 10px;
+      padding: 12px 20px;
+      background: #c0392b;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1.1em;
+      font-weight: bold;
+      transition: background 0.2s, transform 0.15s;
+    }
+    #fullscreenBtn:hover {
+      background: #e74c3c;
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
   <h1>🎮 My Arcade Hub</h1>
 
-  <div>
+  <div class="grid">
     <a class="btn" onclick="loadGame('https://gun-spin-online.github.io/')">Gun Spinner</a>
     <a class="btn" onclick="loadGame('https://gun-spin-online.github.io/go/class-447.html')">Drift Hunters</a>
     <a class="btn" onclick="loadGame('https://gun-spin-online.github.io/go/class-394.html')">ShootZ</a>
     <a class="btn" onclick="loadGame('https://gun-spin-online.github.io/go/class-413.html')">Blumgi Rocket</a>
     <a class="btn" onclick="loadGame('https://gun-spin-online.github.io/go/class-826.html')">Mario</a>
     <a class="btn" onclick="loadGame('https://gun-spin-online.github.io/go/class-450.html')">Slope</a>
-    <a class="btn" onclick="loadGame('https://crazygames.com/embed/space-huggers')">Space Huggers</a>
-    <a class="btn" onclick="loadGame('https://gamaverse.com/drive-mad-game/')">Drive Mad</a>
+    <a class="btn" onclick="loadGame('https://gun-spin-online.github.io/projects/spacehuggers/')">Space Huggers</a>
+    <a class="btn" onclick="loadGame('https://gun-spin-online.github.io/projects/drivemad/')">Drive Mad</a>
     <a class="btn" onclick="loadGame('https://neal.fun/infinite-craft/')">Infinite Craft</a>
   </div>
 
   <div id="gameFrame"></div>
+  <button id="fullscreenBtn" onclick="goFullscreen()">Fullscreen</button>
 
   <script>
     function loadGame(url) {
       document.getElementById("gameFrame").innerHTML =
-        `<iframe src="${url}" allowfullscreen></iframe>`;
+        `<iframe id="gameIframe" src="${url}" allowfullscreen></iframe>`;
+      document.getElementById("fullscreenBtn").style.display = "inline-block";
+    }
+    function goFullscreen() {
+      let iframe = document.getElementById("gameIframe");
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.mozRequestFullScreen) {
+        iframe.mozRequestFullScreen();
+      } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) {
+        iframe.msRequestFullscreen();
+      }
     }
   </script>
 </body>
